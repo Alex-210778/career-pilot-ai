@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-vacancies-table
+      author: Aleksandr Lukyanovich
+      changes:
+        - createTable:
+            tableName: vacancies
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: company
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: location
+                  type: varchar(255)
+
+              - column:
+                  name: source_url
+                  type: varchar(1000)
+
+              - column:
+                  name: description
+                  type: text
+
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
