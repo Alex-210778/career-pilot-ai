@@ -49,6 +49,12 @@ public class Vacancy {
     private VacancyStatus status = VacancyStatus.NEW;
 
     @Column(name = "created_at",
-            nullable = false)
-    private Instant createdAt = Instant.now();
+            nullable = false,
+            updatable = false)
+    private Instant createdAt;
+
+    @PrePersist
+    private void prePersist() {
+        createdAt = Instant.now();
+    }
 }
