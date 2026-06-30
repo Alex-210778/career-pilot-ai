@@ -1,10 +1,12 @@
 package io.github.alexlukyanovich.careerpilot.vacancy.mapper;
 
 import io.github.alexlukyanovich.careerpilot.vacancy.dto.CreateVacancyRequest;
+import io.github.alexlukyanovich.careerpilot.vacancy.dto.UpdateVacancyRequest;
 import io.github.alexlukyanovich.careerpilot.vacancy.dto.VacancyResponse;
 import io.github.alexlukyanovich.careerpilot.vacancy.entity.Vacancy;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface VacancyMapper {
@@ -15,4 +17,6 @@ public interface VacancyMapper {
     Vacancy toEntity(CreateVacancyRequest request);
 
     VacancyResponse toResponse(Vacancy vacancy);
+
+    void updateEntityFromRequest(UpdateVacancyRequest request, @MappingTarget Vacancy vacancy);
 }
