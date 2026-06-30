@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-update-vacancies-table
+      author: alukyanovich
+      changes:
+        - addColumn:
+            tableName: vacancies
+            columns:
+              - column:
+                  name: status
+                  type: varchar(50)
+                  defaultValue: NEW
+                  constraints:
+                    nullable: false
+        - addNotNullConstraint:
+            tableName: vacancies
+            columnName: description
+            columnDataType: text
