@@ -1,4 +1,5 @@
 databaseChangeLog:
-  - include: 
+  - include:
       file: db/changelog/changes/001-create-vacancies-table.yaml
+  - include:
       file: db/changelog/changes/002-update-vacancies-table.yaml
