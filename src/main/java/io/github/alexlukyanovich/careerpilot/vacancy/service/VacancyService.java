@@ -46,17 +46,17 @@ public class VacancyService {
     }
 
     @Transactional
-    public void deleteById(UUID id) {
-        Vacancy vacancyById = getVacancyById(id);
-        vacancyRepository.delete(vacancyById);
-    }
-
-    @Transactional
     public VacancyResponse update(UUID id, UpdateVacancyRequest request) {
         Vacancy vacancyById = getVacancyById(id);
         vacancyMapper.updateEntityFromRequest(request, vacancyById);
 
         return vacancyMapper.toResponse(vacancyById);
+    }
+
+    @Transactional
+    public void deleteById(UUID id) {
+        Vacancy vacancyById = getVacancyById(id);
+        vacancyRepository.delete(vacancyById);
     }
 
     private Vacancy getVacancyById(UUID id) {

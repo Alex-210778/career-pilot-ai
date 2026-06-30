@@ -1,16 +1,15 @@
 package io.github.alexlukyanovich.careerpilot.vacancy.dto;
 
 import io.github.alexlukyanovich.careerpilot.vacancy.enums.VacancyStatus;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.Instant;
 import java.util.UUID;
 
 @Getter
 @Setter
+@ToString
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class VacancyResponse {
